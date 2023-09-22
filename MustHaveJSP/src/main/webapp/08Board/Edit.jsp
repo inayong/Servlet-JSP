@@ -35,6 +35,6 @@ function validateForm(form) {
 </script>
 </head>
 <body>
-
+<jsp:include page="../Common/Link.jsp" />
 </body>
 </html>
