@@ -21,8 +21,7 @@
 	%>
 	<table border="1">
 		<tr>
-			<th>No</th><th>작성자</th><th>제목</th><th>카테고리</th>
-			<th>원본 파일명</th><th>저장된 파일명</th><th>작성일</th><th></th>
+			<th>No</th><th>제목</th><th>카테고리</th><th>원본 파일명</th><th>저장된 파일명</th><th>작성일</th><th></th>
 		</tr>
 	<% for (MyFileDTO f : fileLists) { %>
 		<tr>
