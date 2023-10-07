@@ -48,7 +48,7 @@
 	<tr>
 		<td>내용</td>
 		<td>
-			<textarea name="conetent" style="width: 90%;height: 100px;" >${ dto.content }</textarea>
+			<textarea name="content" style="width: 90%;height: 100px;" >${ dto.content }</textarea>
 		</td>
 	</tr>
 	<tr>
@@ -61,7 +61,7 @@
 		<td colspan="2" align="center">
 			<button type="submit">작성 완료</button>
 			<button type="reset">RESET</button>
-			<button type="button" onclick="location.href='../14MVCBoard/List.do';">목록 바로가기</button>
+			<button type="button" onclick="location.href='../mvcboard/list.do';">목록 바로가기</button>
 		</td>
 	</tr>
 </table>

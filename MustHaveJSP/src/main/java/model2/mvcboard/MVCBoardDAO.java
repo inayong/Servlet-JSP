@@ -225,7 +225,9 @@ public class MVCBoardDAO extends JDBConnect {
 		
 		int result = 0;
 		try {
-			String query = "update mvcboard set title=?, name=? content=? ofile=?, sfile=? where idx=? and pass=?"; 
+			String query = "update mvcboard "
+					+ "set title=?, name=?, content=?, ofile=?, sfile=? "
+					+ "where idx=? and pass=?"; 
 			
 			psmt = getConnection().prepareStatement(query);
 			psmt.setString(1, dto.getTitle());
@@ -234,7 +236,7 @@ public class MVCBoardDAO extends JDBConnect {
 			psmt.setString(4, dto.getOfile());
 			psmt.setString(5, dto.getSfile());
 			psmt.setString(6, dto.getIdx());
-			psmt.setString(6, dto.getPass());
+			psmt.setString(7, dto.getPass());
 			
 			result = psmt.executeUpdate();
 		}

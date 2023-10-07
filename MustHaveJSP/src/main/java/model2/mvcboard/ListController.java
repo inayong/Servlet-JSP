@@ -13,7 +13,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import utils.BoardPage;
 
-@WebServlet("/14MVCBoard/List.do")
+@WebServlet("/mvcboard/list.do")
 public class ListController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -46,7 +46,7 @@ public class ListController extends HttpServlet {
 		
 		//목록에 출력할 게시물 범위 계산
 		int start = (pageNum - 1) * pageSize;
-		int end =- pageNum * pageSize;
+		int end = pageNum * pageSize;
 		map.put("start", start);
 		map.put("pageSize", pageSize);
 		//페이지 저리 끝

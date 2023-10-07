@@ -47,7 +47,7 @@ public class PassController extends HttpServlet {
 					String saveFileName = dto.getSfile();
 					FileUtil.deleteFile(req, "/Uploads", saveFileName);
 				}
-				JSFunction.alertLocation(resp, "삭제되었습니다.", "../14MVCBoard/List.do");
+				JSFunction.alertLocation(resp, "삭제되었습니다.", "../mvcboard/list.do");
 			}
 		}
 		else {
