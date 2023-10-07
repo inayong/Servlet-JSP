@@ -7,6 +7,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 
 import jakarta.servlet.ServletException;
@@ -49,6 +51,25 @@ public class FileUtil {
 		oldFile.renameTo(newFile);
 		
 		return newFileName;
+	}
+	
+	//multiple 속성 추가로 2개 이상의 파일 업로드
+	public static ArrayList<String> multipleFile(HttpServletRequest req, String sDirectory) throws ServletException, IOException {
+		ArrayList<String> listFileName = new ArrayList<>();
+		Collection<Part> parts = req.getParts();
+		for (Part part : parts) {
+			if (!part.getName().equals("ofile"))
+				continue;
+			
+			String partHeader = part.getHeader("content-disposition");
+			String[] phArr = partHeader.split("filename=");
+			String originalFileName = phArr[1].trim().replace("\"", "");
+			if (!originalFileName.isEmpty()) {
+				part.write(sDirectory + File.separator + originalFileName);
+			}
+			listFileName.add(originalFileName);
+		}
+		return listFileName;
 	}
 	
 	//명시한 파일을 찾아 다운로드
